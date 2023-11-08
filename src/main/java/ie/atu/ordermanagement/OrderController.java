@@ -1,10 +1,9 @@
 package ie.atu.ordermanagement;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
 public class OrderController {
@@ -20,4 +19,11 @@ public class OrderController {
         return orderService.createOrder(order);
 
     }
+
+    @GetMapping("order/{orderId}")
+    public Object getOrderId(@PathVariable int orderId){
+        Object result= orderService.getWantedOrderById(orderId);
+        return result;
+    }
+
 }

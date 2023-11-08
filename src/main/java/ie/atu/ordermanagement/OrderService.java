@@ -12,4 +12,9 @@ public class OrderService {
         orders.add(order);
         return "You order has been placed";
     }
+
+    public Object getWantedOrderById(int orderId){
+        Object foundOrder = orders.get(orderId);
+        return foundOrder;
+    }
 }
